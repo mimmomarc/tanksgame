@@ -1,2 +1,3 @@
 # tanksgame
-Tanks Game 
+Tanks Game :
+It's the new game
