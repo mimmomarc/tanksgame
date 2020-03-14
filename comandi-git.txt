@@ -1,0 +1,22 @@
+Comandi da prompt dei comandi :
+1) Aprire prompt Git CMD
+2) Aprire Atom e aprire un nuovo folder (il progetto)
+3) in Git CMD:
+posizionarsi sul progetto con il comando:
+cd C:\....posizione progetto.....
+4) Una volta dentro il progetto si possono eseguire i comandi:
+  -git status : per mostrare quali file hai modificato tu, compariranno in rosso se sono stati modificati ma non aggiunti nello stage , in verde se modificati e aggiunti nello stage
+  Lo stage rappresenta lo spazio dei file dei quali si deciderà se fare il commit o no.
+  -git add . : per aggiungere tutti i file modificate nello stage
+  -git add nomefilecompleto : per aggiungere un file specifico
+  -git restore . o nomefile : per rimuovere le modifiche appena fatte (con il '.' ti riferisci a tutti i file)
+  -git commit -m "Messaggio di commit" : per fare un commit
+  -git log --oneline: per vedere tutti i commit con i relativi messaggi associati
+  -git checkout codicecommit : per visionare un vecchio commit
+  -git push origin nomedelramo: invia il commit al repository remoto
+5) Per la gestione dei rami:
+Se voglio creare un nuovo ramo che mi faccia distaccare dal ramo principale (master) in modo da decidere in seguito se apportare le modifiche fatte o meno:
+  -git branch nuovoramo: per creare un nuovo ramo , ma non  mi sono ancora spostato nel ramo appena creato
+  -git checkout nomeramo: ti sposti sul ramo nomeramo , da adesso puoi decidere di fare alcune modifiche che rimarrano nel ramo
+  -git branch -a: mostra tutti i rami che ci sono
+  -git branch -d nomeramo: cancella nomeramo , ti chiederà di confermare la cancellazione riscrivendo il comando con la lettera D (es: git branch -D nomeramo)
