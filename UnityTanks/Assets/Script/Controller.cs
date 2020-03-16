@@ -9,7 +9,7 @@ using UnityEngine;
 //In questo script è gestito il movimento , nell'update c'è il movimento utilizzato , sotto ad update sono presenti dei metodi alternativi utilizzati con altre componenti.
 public class Controller : MonoBehaviour
 {
-
+    public Animator animator;
     public Joystick joystick;
     public float speed;
     float horizontal , vertical;
@@ -19,6 +19,7 @@ public class Controller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         n_rigidbody = GetComponent<Rigidbody2D>();
         horizontal = 0;
         vertical = 0;
@@ -37,14 +38,18 @@ public class Controller : MonoBehaviour
         {
            
             n_rigidbody.velocity = new Vector2( horizontal * speed * Time.deltaTime , 0 );
+            animator.SetFloat("Speed",Mathf.Abs( n_rigidbody.velocity.x));
         
         }else if (vertical>SOGLIA_MOVIMENTO|| vertical < -SOGLIA_MOVIMENTO)
         {
           
             n_rigidbody.velocity = new Vector2(0,vertical * speed * Time.deltaTime);
+            animator.SetFloat("Speed", Mathf.Abs(n_rigidbody.velocity.y));
         }
         else
         {
+            animator.SetFloat("Speed", 0f);
+
             n_rigidbody.velocity = new Vector2(0,0);
         }
 
