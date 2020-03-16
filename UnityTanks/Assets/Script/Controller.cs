@@ -56,6 +56,8 @@ public class Controller : MonoBehaviour
 
     }
 
+    
+
     void controlWithRow()
     {
         if (Input.GetKey(KeyCode.RightArrow))
