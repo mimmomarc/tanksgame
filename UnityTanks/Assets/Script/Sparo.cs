@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Sparo : MonoBehaviour
 {
+    public Animator animator;
+    
     bool spara;
     bool conteggioEseguito ;
     float seconds;
@@ -11,10 +13,13 @@ public class Sparo : MonoBehaviour
     public float delaySeconds;
     public Transform firePoint;
     public GameObject bulletPrefab;
-    
+     
+
 
     void Start()
     {
+        animator = gameObject.GetComponent<Animator>();
+        
         spara = false;
         conteggioEseguito = true;
     }
@@ -56,6 +61,7 @@ public class Sparo : MonoBehaviour
     public void pointerDown()
     {
         spara = true;
+       
     }
 
 
@@ -68,7 +74,8 @@ public class Sparo : MonoBehaviour
     //Il metodo che si occupa di gestire la creazione dei nuovi proiettili 
     void Shoot()
     {
-
+        //animator.SetBool("isfiring", true);
+        animator.Play("sparo");
         Instantiate(bulletPrefab, firePoint.position,firePoint.rotation);
     }
 
