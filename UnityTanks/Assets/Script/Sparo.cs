@@ -6,7 +6,7 @@ public class Sparo : MonoBehaviour
 {
     public Animator animator;
     
-    bool spara;
+    public bool spara;
     bool conteggioEseguito ;
     float seconds;
     float timer , prova;
@@ -75,7 +75,11 @@ public class Sparo : MonoBehaviour
     void Shoot()
     {
         //animator.SetBool("isfiring", true);
-        animator.Play("sparo");
+
+        if (animator != null)
+        {
+            animator.Play("sparo");
+        }
         Instantiate(bulletPrefab, firePoint.position,firePoint.rotation);
     }
 
