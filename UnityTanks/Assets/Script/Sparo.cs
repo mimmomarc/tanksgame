@@ -13,7 +13,7 @@ public class Sparo : MonoBehaviour
     public float delaySeconds;
     public Transform firePoint;
     public GameObject bulletPrefab;
-     
+    public string ChiSpara;
 
 
     void Start()
@@ -22,6 +22,10 @@ public class Sparo : MonoBehaviour
         
         spara = false;
         conteggioEseguito = true;
+        if (gameObject.tag == "Enemy")
+        {
+            spara = true;
+        }
     }
 
     void Update()
@@ -80,7 +84,11 @@ public class Sparo : MonoBehaviour
         {
             animator.Play("sparo");
         }
+
+        bulletPrefab.GetComponent<Bullet>().setMittente(gameObject.tag);
         Instantiate(bulletPrefab, firePoint.position,firePoint.rotation);
+       
+
     }
 
 }

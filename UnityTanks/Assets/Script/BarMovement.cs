@@ -36,7 +36,7 @@ public class BarMovement : MonoBehaviour {
         else
         {
             rb.velocity = new Vector2(0, 0);
-            Debug.Log("Non mi muovo");
+
         }
        
 
@@ -62,7 +62,7 @@ public class BarMovement : MonoBehaviour {
         {
             if (collision.contacts[0].normal.y == 1 || collision.contacts[0].normal.y == -1)
             {
-                Debug.Log("Collisione in entrata");
+                
                 canMove = false;
             }
         }
@@ -77,7 +77,7 @@ public class BarMovement : MonoBehaviour {
         {
             if (collision.contacts[0].normal.y == 1 || collision.contacts[0].normal.y == -1)
             {
-                Debug.Log("Collisione Stay");
+                
                 canMove = false;
             }
         }
@@ -86,7 +86,7 @@ public class BarMovement : MonoBehaviour {
     private void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.collider.tag == "Player") { 
-            Debug.Log("Collisione in uscita");
+           
 
             canMove = true;
             

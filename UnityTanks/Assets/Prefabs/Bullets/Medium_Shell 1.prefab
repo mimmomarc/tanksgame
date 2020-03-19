@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 216098284302057711}
   - component: {fileID: 8795027926675139249}
   - component: {fileID: 5749846662242780338}
+  - component: {fileID: 8902585468614165962}
   m_Layer: 0
   m_Name: Medium_Shell 1
-  m_TagString: Bullet
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -133,5 +134,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c02ab3e53094178438ec84b802cbcf88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mittente: Enemy
   speed: 20
+  damage: 100
   rb: {fileID: 216098284302057711}
+  animator: {fileID: 8902585468614165962}
+--- !u!95 &8902585468614165962
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9091008660688859928}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f112f304c68d0564e92457a55d18ff2a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

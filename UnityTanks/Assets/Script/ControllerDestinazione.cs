@@ -34,7 +34,7 @@ public class ControllerDestinazione : MonoBehaviour
             randomy = Random.Range(bordoInferiore, bordoSuperiore);
             targetPosition = new Vector2(randomX, randomy);
             gameObject.transform.position = targetPosition;
-            Debug.Log(targetPosition);
+           
         }
         else
         {
@@ -65,7 +65,7 @@ public class ControllerDestinazione : MonoBehaviour
         {
             gameObject.transform.position = dammiPosizioneCasuale();
         }
-        Debug.Log(collision);
+        
     }
 
     private void OnTriggerStay2D(Collider2D collision)

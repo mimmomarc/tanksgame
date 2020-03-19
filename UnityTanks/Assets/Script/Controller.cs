@@ -33,30 +33,54 @@ public class Controller : MonoBehaviour
 
         horizontal = joystick.Horizontal;
         vertical = joystick.Vertical;
+
+       
         
-        if(horizontal > SOGLIA_MOVIMENTO || horizontal<-SOGLIA_MOVIMENTO)
+        if(horizontal!=0 && vertical != 0)
         {
-           
-            n_rigidbody.velocity = new Vector2( horizontal * speed * Time.deltaTime , 0 );
-            animator.SetFloat("Speed",Mathf.Abs( n_rigidbody.velocity.x));
-        
-        }else if (vertical>SOGLIA_MOVIMENTO|| vertical < -SOGLIA_MOVIMENTO)
-        {
-          
-            n_rigidbody.velocity = new Vector2(0,vertical * speed * Time.deltaTime);
-            animator.SetFloat("Speed", Mathf.Abs(n_rigidbody.velocity.y));
+            n_rigidbody.velocity = new Vector2(horizontal * speed * Time.deltaTime, vertical * speed * Time.deltaTime);
+            animator.SetFloat("Speed", Mathf.Abs(n_rigidbody.velocity.x));
         }
         else
         {
             animator.SetFloat("Speed", 0f);
 
-            n_rigidbody.velocity = new Vector2(0,0);
+            n_rigidbody.velocity = new Vector2(0, 0);
         }
+
+
+
+
 
 
     }
 
-    
+
+    void controlOnlyHorizontalAndVertical()
+    {
+
+        
+     if(horizontal > SOGLIA_MOVIMENTO || horizontal<-SOGLIA_MOVIMENTO)
+     {
+
+         n_rigidbody.velocity = new Vector2( horizontal * speed * Time.deltaTime , 0 );
+         animator.SetFloat("Speed",Mathf.Abs( n_rigidbody.velocity.x));
+
+     }else if (vertical>SOGLIA_MOVIMENTO|| vertical < -SOGLIA_MOVIMENTO)
+     {
+
+         n_rigidbody.velocity = new Vector2(0,vertical * speed * Time.deltaTime);
+         animator.SetFloat("Speed", Mathf.Abs(n_rigidbody.velocity.y));
+     }
+     else
+     {
+         animator.SetFloat("Speed", 0f);
+
+         n_rigidbody.velocity = new Vector2(0,0);
+     }
+
+    }
+
 
     void controlWithRow()
     {
