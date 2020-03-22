@@ -5,7 +5,7 @@ using UnityEngine;
 public class BarMovement : MonoBehaviour {
     
     public float velocity = 100f;
-    public Collider2D limitArea;
+    
 
     //variabile utilizzate per gestire la velocità dopo il blocco della barriera
     
@@ -19,7 +19,14 @@ public class BarMovement : MonoBehaviour {
     // Start is called before the first frame update
     void Start()
     {
-        
+        if (Random.value >= 0.5f)
+        {
+            direction = 1;
+        }
+        else
+        {
+            direction = -1;
+        }
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -45,7 +52,7 @@ public class BarMovement : MonoBehaviour {
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.tag == limitArea.tag)
+        if (collision.collider.tag == "LimitArea")
         {
             if (direction == 1)
             {
