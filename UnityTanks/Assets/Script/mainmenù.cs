@@ -5,7 +5,12 @@ using UnityEngine.SceneManagement;
 
 
 
-public class mainmenù: MonoBehaviour { 
+public class mainmenù: MonoBehaviour {
+
+
+    private const string MENU_INIZIA = "MenuInizia";
+    private const string MODALITA_AVVENTUA = "SampleScene";
+    private const string SELEZIONA_LIVELLO_AVVENTURA = "SelezionaLivello";
 
     public void Playgame()
     {
@@ -17,9 +22,26 @@ public class mainmenù: MonoBehaviour {
 
     }
 
+
+    public void PlayMenuInizia()
+    {
+        SceneManager.LoadScene(MENU_INIZIA);
+    }
+
+    public void PlayModalitaAvventura()
+    {
+        SceneManager.LoadScene(MODALITA_AVVENTUA);
+    }
+
+    public void PlaySelezionaLivelloAvventura()
+    {
+        SceneManager.LoadScene(SELEZIONA_LIVELLO_AVVENTURA);
+    }
+
+
     public void QuitGame()
     {
-        Debug.Log("Quit!!");
+        
         Application.Quit();
 
 
