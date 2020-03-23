@@ -87,6 +87,7 @@ public class Sparo : MonoBehaviour
 
         bulletPrefab.GetComponent<Bullet>().setMittente(gameObject.tag);
         Instantiate(bulletPrefab, firePoint.position,firePoint.rotation);
+        FindObjectOfType<AudioManager>().Play("Sparo");
        
 
     }

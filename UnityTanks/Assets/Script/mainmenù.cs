@@ -12,6 +12,12 @@ public class mainmenù: MonoBehaviour {
     private const string MODALITA_AVVENTUA = "SampleScene";
     private const string SELEZIONA_LIVELLO_AVVENTURA = "SelezionaLivelloAvv";
 
+    private void Awake()
+    {
+        //Per il suono
+        FindObjectOfType<AudioManager>().Play("Sottofondo");
+    }
+
     public void Playgame()
     {
 
