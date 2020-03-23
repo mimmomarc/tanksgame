@@ -8,13 +8,13 @@ public class BarGenerator : MonoBehaviour
     public GameObject barLegni;
     Vector3 Sinistra, Centro, Destra;
     Quaternion Fix;
-    public bool c = true;
+    
    
     void Start()
     {
 
 
-        Livello livello = GestoreLivelli.getLivello(2);
+       
 
         
         Sinistra = new Vector3(1f, Random.Range(-4.3f, 4.3f),0f);
@@ -23,19 +23,25 @@ public class BarGenerator : MonoBehaviour
         Fix = new Quaternion(0f, 0f, 0f,0f);
 
 
-        if (livello.SiPuòCostruire(1))
+
+        //Recupero le info del livello
+        Livello livello = GestoreLivelli.getLivello(2);
+        Livello.InfoBarriere info = livello.DammiInfoBarriere();
+
+
+        if (info.siPuòCostruireASinistra())
         {
             Instantiate(barLegni, Sinistra, Fix);
 
         }
 
-        if (livello.SiPuòCostruire(2))
+        if (info.siPuòCostruireAlCentro())
         {
             Instantiate(barLegni, Centro, Fix);
 
         }
 
-        if(livello.SiPuòCostruire(3))
+        if(info.siPuòCostruireADestra())
         {
             Instantiate(barLegni, Destra, Fix);
 

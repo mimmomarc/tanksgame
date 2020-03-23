@@ -23,12 +23,12 @@ public static class GestoreLivelli
     
     public static Livello livello1()
     {
-        Livello livello1 = null;
-        
-
+        Livello livello1;
         livello1 = new Livello(1);
         livello1.creaBarrieraSinistra();
-        livello1.creaBarrieraDestra();
+        livello1.creaBarrieraCentro();
+        
+        
         return livello1;
        
 
@@ -38,10 +38,8 @@ public static class GestoreLivelli
     public static Livello livello2()
     {
         Livello livello2 = new Livello(2);
-        livello2 = new Livello(1);
-        livello2.creaBarrieraSinistra();
-        livello2.creaBarrieraDestra();
         livello2.creaBarrieraCentro();
+        livello2.creaBarrieraDestra();
         return livello2;
     }
 
