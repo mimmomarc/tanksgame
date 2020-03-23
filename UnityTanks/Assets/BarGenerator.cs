@@ -25,7 +25,7 @@ public class BarGenerator : MonoBehaviour
 
 
         //Recupero le info del livello
-        Livello livello = GestoreLivelli.getLivello(2);
+        Livello livello = GestoreLivelli.getLivello(PlayerPrefs.GetInt("LivelloAttuale"));
         Livello.InfoBarriere info = livello.DammiInfoBarriere();
 
 

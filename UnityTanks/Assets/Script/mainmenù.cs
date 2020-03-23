@@ -8,9 +8,9 @@ using UnityEngine.SceneManagement;
 public class mainmenù: MonoBehaviour {
 
 
-    private const string MENU_INIZIA = "MenuInizia";
+    private const string MENU_INIZIA = "MenuIniziale";
     private const string MODALITA_AVVENTUA = "SampleScene";
-    private const string SELEZIONA_LIVELLO_AVVENTURA = "SelezionaLivello";
+    private const string SELEZIONA_LIVELLO_AVVENTURA = "SelezionaLivelloAvv";
 
     public void Playgame()
     {
@@ -38,6 +38,12 @@ public class mainmenù: MonoBehaviour {
         SceneManager.LoadScene(SELEZIONA_LIVELLO_AVVENTURA);
     }
 
+
+    public void SelezionaLivello(int level)
+    {
+        PlayerPrefs.SetInt("LivelloAttuale", level);
+        PlayModalitaAvventura();
+    }
 
     public void QuitGame()
     {

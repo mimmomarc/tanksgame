@@ -136,7 +136,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mittente: Enemy
   speed: 20
-  damage: 100
+  damage: 5
   rb: {fileID: 216098284302057711}
   animator: {fileID: 8902585468614165962}
 --- !u!95 &8902585468614165962
